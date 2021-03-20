@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <script src="scripts/riven.js"></script>
+  <script src="scripts/nodes/print.js"></script>
+  <script src="scripts/nodes/value.js"></script>
+  <script src="scripts/nodes/add.js"></script>
+  <script src="scripts/nodes/mesh.js"></script>
+  <script src="scripts/nodes/interface.js"></script>
+  <script src="scripts/nodes/renderer.js"></script>
+  <script src="scripts/nodes/console.js"></script>
+  <script src="scripts/nodes/back.js"></script>
+  <link rel="stylesheet" type="text/css" href="links/reset.css"/>
+  <link rel="stylesheet" type="text/css" href="links/fonts.css"/>
+  <link rel="stylesheet" type="text/css" href="links/main.css"/>
+  <title>Riven — Node Reference</title>
+</head>
+<body>
+  <script>
+    'use strict'
+
+    const lib = RIVEN.lib
+
+    RIVEN.create = (append = true) => {
+      Ø("interface").create({x:2,y:2},lib.Inter)
+      Ø("value").create({x:6,y:2},lib.Value,2)
+      Ø("renderer").create({x:10,y:2},lib.Renderer)
+      Ø("add").create({x:14,y:2},lib.Add)
+      Ø("console").create({x:2,y:6},lib.Console)
+      Ø("print").create({x:6,y:6},lib.Print)
+      Ø("node").create({x:10,y:6},RIVEN.Node)
+      Ø("back").create({x:14,y:6},lib.Back)
+    }
+
+    RIVEN.create(true)
+    RIVEN.graph()
+  </script>
+</body>
+</html>
